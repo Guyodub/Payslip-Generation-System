@@ -1,10 +1,9 @@
 # ECHO is on.
 #pay/urls.py
 from django.urls import path
+from .views import HomePageView
 
-from .views import home_page_view
+urlpatterns = [
+    path('', HomePageView.as_view(), name='home'),
+]
 
-urlpatterns  = [
-    
-    path('', home_page_view, name = 'home')
-    ]
