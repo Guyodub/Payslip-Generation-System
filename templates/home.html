@@ -1,9 +1,13 @@
 {% extends '_base.html' %}
 
+{% load static %}
+
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h1>Payslip generation System  </h1>
+<h1>Payslip generation System </h1>
+
+<img class='payslip' src="{% static 'images/payslip.png' %}">
 <!--
     if the user is logged in (authenticated)
     we display a greeting and welcome him or her.
@@ -20,13 +24,4 @@
     will automatically refer to that URL path.
 
 -->
-{% if user.is_authenticated %}
-<b>Hi {{ user.username }} welcome!</b>
-
-<p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">Log In</a>
-<a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
 {% endblock content %}

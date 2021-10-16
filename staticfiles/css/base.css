@@ -1,0 +1,9 @@
+/* static/css/base.css */
+h1 {
+color: red;
+}
+
+.payslip {
+    height: 50px;
+    width: auto;
+    }
