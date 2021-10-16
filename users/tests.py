@@ -14,9 +14,18 @@ does the actual work of creating a new user with the proper permissions.
 For test_create_superuser test that a superuser can be created.
 '''
 
+'''
+test sign up functionality!
+
+test_signup_template which tests for the status code, template used and 
+both included and excluded text similarly to how we did it in the last chapter of the homepage.
+'''
+
 from django.test import TestCase
 
 from django.contrib.auth import get_user_model
+
+from django.urls import reverse
 
 
 class CustomUserTests(TestCase):
@@ -49,7 +58,21 @@ class CustomUserTests(TestCase):
         self.assertTrue(admin_user.is_staff)
         self.assertTrue(admin_user.is_superuser)
 
-    
+
+class signupPageTests(TestCase):
+
+    def setUp(self):
+        url = reverse('signup')
+
+        self.response = self.client.get(url)
+
+    def test_signup_template(self):
+        self.assertEqual(self.response.status_code, 200)
+        self.assertTemplateUsed(self.response, 'signup.html') 
+        self.assertContains(self.response, 'Sign Up')
+        self.assertNotContains(
+            self.response, 'kaggle'
+        )  
 
 
 

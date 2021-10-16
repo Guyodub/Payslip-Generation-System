@@ -1,17 +1,32 @@
 {% extends '_base.html' %}
+
 {% block title %}Home{% endblock title %}
+
 {% block content %}
 <h1>Payslip generation System  </h1>
+<!--
+    if the user is logged in (authenticated)
+    we display a greeting and welcome him or her.
 
-<p>
-    Payslip generation System is a free web based applications allow user to generate his/her own payslip based on his/her employment benefits.<br><br>
+    We use Django's template engine via double opening and
+    closing brackets.
+
+    The default User conatins field including is_authenticated, username and email etc 
+    which we can use here.
     
-    <b>Features of the Project:</b> <br>
-    <ul>
-        <li>This application is helpful for calculating employee weekly salary payments with an overtime bonus.</li>
-        <li> Generating employee payment slip which includes tax.</li>
-        <li>It is very helpful for the user’s company to calculate the salaries easily.</li>
-    </ul>
-</p>
+    And the logout and login are URL names. 
+    
+    The url template tag means if we specify the URL name the link
+    will automatically refer to that URL path.
 
+-->
+{% if user.is_authenticated %}
+<b>Hi {{ user.username }} welcome!</b>
+
+<p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+<a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
 {% endblock content %}
