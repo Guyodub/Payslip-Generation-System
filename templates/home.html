@@ -1,27 +1,16 @@
+<!-- templates/home.html -->
 {% extends '_base.html' %}
-
 {% load static %}
-
 {% block title %}Home{% endblock title %}
-
 {% block content %}
 <h1>Payslip generation System </h1>
-
 <img class='payslip' src="{% static 'images/payslip.png' %}">
-<!--
-    if the user is logged in (authenticated)
-    we display a greeting and welcome him or her.
-
-    We use Django's template engine via double opening and
-    closing brackets.
-
-    The default User conatins field including is_authenticated, username and email etc 
-    which we can use here.
-    
-    And the logout and login are URL names. 
-    
-    The url template tag means if we specify the URL name the link
-    will automatically refer to that URL path.
-
--->
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }}!</p>
+<p><a href="{% url 'account_logout' %}">Log Out</a></p>
+{% else %}
+<p>You are not logged in</p>
+<p><a href="{% url 'account_login' %}">Log In</a> |
+<a href="{% url 'account_signup' %}">Sign Up</a></p>
+{% endif %}
 {% endblock content %}
