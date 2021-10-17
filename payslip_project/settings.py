@@ -180,3 +180,5 @@ AUTH_USER_MODEL = 'users.CustomUser' # new
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home' #new
+
+DEFAULT_FROM_EMAIL = 'admin@payslipgenerationsystem.com'
