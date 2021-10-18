@@ -1,0 +1,66 @@
+<!-- templates/books/book_list.html-->
+{% extends '_base.html' %}
+
+{% block title %}pays{% endblock title %}
+
+{% block content %}
+<html>
+    <head>
+        <style>
+            #employee {
+              font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            #employee td, #customers th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            
+            #employee tr:nth-child(even){background-color: #f2f2f2;}
+            
+            #employee tr:hover {background-color: #ddd;}
+            
+            #employee th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              /* background-color: #4CAF50; */
+              color: black;
+            }
+            </style>
+    </head>
+
+    <body>
+      <div>
+        <table id="employee">
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Job Number</th>
+              <th>Basic Pay</th>
+              <th>Allowances</th>
+              <th>Deductions</th>
+            </tr>
+            <tr>
+                {% for object in pay_list %}
+              <td>{{ object.name }}</td>
+              <td>{{ object.jobTitle }}</td>
+              <td>{{ object.jobNumber }}</td>
+              <td>{{ object.basicPay }}</td>
+              <td>{{ object.allowances }}</td>
+              <td>{{ object.deductions }}</td>
+              <td>{{ object.logo }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+    </div>
+    </body>
+    </html>
+
+
+{% endblock content %}
+
+
+

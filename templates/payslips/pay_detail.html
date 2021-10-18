@@ -1,0 +1,11 @@
+
+<!-- templates/payslis/pay_detail.html -->
+{% extends '_base.html' %}
+{% block title %}{{ pay.name}}{% endblock title %}
+{% block content %}
+<div class="pay-detail">
+<h2><a href="">{{ pay.jobTitle}}</a></h2>
+<p>Basic Pay: {{ pay.basicPay }}</p>
+<p>Deductions: {{ pay.deductions }}</p>
+</div>
+{% endblock content %}

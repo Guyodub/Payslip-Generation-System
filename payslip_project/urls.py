@@ -27,4 +27,5 @@ urlpatterns = [
 
     #local apps
     path('', include('pay.urls')),
+    path('payslips/', include('payslips.urls')),
 ]

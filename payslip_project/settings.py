@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'allauth', # new
     'allauth.account', # new
 
+    'payslips.apps.PayslipsConfig',
     'users.apps.UsersConfig',
-    'pay.apps.PayConfig', # new
+    'pay.apps.PayConfig',
+    
 ]
 
 #django-crispy form

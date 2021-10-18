@@ -1,8 +1,12 @@
 <!-- templates/about.html -->
 {% extends '_base.html' %}
+{% load static %}
 {% block title %}About{% endblock title %}
 {% block content %}
 <h1>Payslip generation System</h1>
+<img class='payslip' src="{% static 'images/payslip.png' %}">
+<br>
+<br>
 <p>
     Payslip generation System is a free web based applications allow user to generate his/her own payslip based on his/her employment benefits.<br><br>
     
