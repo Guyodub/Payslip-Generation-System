@@ -1,0 +1,15 @@
+<!-- templates/books/book_detail.html -->
+{% extends '_base.html' %}
+{% block title %}{{ object.name }}{% endblock title %}
+{% block content %}
+<div class="profile-detail">
+
+<h2><a href="">{{ object.name}}</a></h2>
+<p>Job Title: {{ object.jobTitle }}</p>
+<p>Basic Pay: {{ object.basicPay }}</p>
+<p>Allowances: {{ object.allowances }}</p>
+<p>Deductions: {{ object.deductions }}</p>
+</div>
+<a href="{% url 'profile_edit' profile.pk %}">+ Edit Profile</a>
+
+{% endblock content %}
