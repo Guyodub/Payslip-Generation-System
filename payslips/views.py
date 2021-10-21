@@ -21,5 +21,5 @@ class ProfileCreateView(CreateView):
 class ProfileUpdateView(UpdateView): # new
     model = UserProfile
     template_name = 'payslips/profile_edit.html'
-    fields = ['jobTitle', 'basicPay']
+    fields = '__all__'
 
