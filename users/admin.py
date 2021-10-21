@@ -7,6 +7,8 @@ We extend the existing UserAdmin into CustomUserAdmin and tell
 Django to use our new forms, custom user model and list only the email
 and username of a user.
 '''
+
+#admin.py
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
