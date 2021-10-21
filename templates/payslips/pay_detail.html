@@ -9,4 +9,5 @@
 <p>Allowances: {{ pay.allowances }}</p>
 <p>Deductions: {{ pay.deductions }}</p>
 </div>
+<p><a href="{% url 'profile_edit' pay.pk %}">+ Edit Profile</a></p>
 {% endblock content %}

@@ -1,6 +1,6 @@
 
 #payslips/views.py
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import UserProfile
 
 class PayListView(ListView):
@@ -17,3 +17,9 @@ class ProfileCreateView(CreateView):
     model = UserProfile
     template_name = 'payslips/profile_create.html'
     fields = '__all__'
+
+class ProfileUpdateView(UpdateView): # new
+    model = UserProfile
+    template_name = 'payslips/profile_edit.html'
+    fields = ['jobTitle', 'basicPay']
+
