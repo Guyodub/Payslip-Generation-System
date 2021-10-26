@@ -6,7 +6,7 @@
 
 ## Purpose
 
- Payslips are so often needed by people but obtaining sometimes is hard. 
+ Payslips are so often needed by people but obtaining a payslip is sometimes is hard. 
  Potential employers ask for it. Employees demand from their employer too. We realise that this is hard 
  task but an important one. In this app, we make this easy. So just give us your input 
  and sit back, we will generate for you a payslip in pdf format. 
